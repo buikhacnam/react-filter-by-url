@@ -1,0 +1,32 @@
+{
+    "name": "react-filter-by-url",
+    "version": "0.0.4",
+    "description": "",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc",
+        "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
+    },
+    "author": "Casey Bui",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^17.0.21",
+        "@types/react": "^17.0.37",
+        "@types/react-dom": "^17.0.11",
+        "prettier": "2.7.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-router-dom": "^6.2.1",
+        "typescript": "^4.5.2"
+    },
+    "peerDependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-router-dom": "^6.2.1"
+    }
+}
