@@ -1,6 +1,13 @@
 {
     "name": "react-filter-by-url",
-    "version": "0.0.4",
+     "repository": {
+        "type": "git",
+        "url": "https://github.com/buikhacnam/react-filter-by-url.git"
+    },
+    "publishConfig": {
+        "registry":"https://npm.pkg.github.com"
+    },
+    "version": "0.0.6",
     "description": "",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -13,6 +20,7 @@
         "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
     },
     "author": "Casey Bui",
+    "email": "buikhacnam11@gmail.com",
     "license": "MIT",
     "devDependencies": {
         "@types/node": "^17.0.21",
