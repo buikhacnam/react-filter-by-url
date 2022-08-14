@@ -4,9 +4,6 @@
         "type": "git",
         "url": "https://github.com/buikhacnam/react-filter-by-url.git"
     },
-    "publishConfig": {
-        "registry":"https://npm.pkg.github.com"
-    },
     "version": "0.0.6",
     "description": "",
     "main": "dist/cjs/index.js",
