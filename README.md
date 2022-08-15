@@ -1,8 +1,14 @@
+![npm](https://img.shields.io/npm/v/react-filter-by-url)
+![npm lisence](https://img.shields.io/npm/l/react-filter-by-url)
+![npm type definitions](https://img.shields.io/npm/types/react-moralis)
+![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCvdDJyJ8twY5EwVSOA8MwMg?style=social)
+
 # react-filter-by-url
 
 
 <img src="https://raw.githubusercontent.com/buikhacnam/buikhacnam/main/public/demo.gif" alt="" />
 
+Live demo: https://react-filter-by-ulr-demo.vercel.app/list
 
 You want to filter a list of items by a URL parameter in a Single Page Application (React):
 
@@ -31,7 +37,7 @@ The list of items will be filterd automatically by:
 yarn add react-filter-by-url react-router-dom
 ```
 
-We use `react-router-dom` under the hood, so in the root file `index.tsx`, wrap the app with `<BrowserRouter>`:
+We use `react-router-dom` under the hood, so in the root file `index.tsx`, wrap the `<app />` with `<BrowserRouter>`:
 
 ```jsx
 import React from 'react'
@@ -84,6 +90,24 @@ const DemoList: React.FC<ListProps> = ({}) => {
 -   `getDefaultParamValue`: get the default value of a param
 -   `handleSelectFilter`: handle the select filter event in the UI
 
+
+Try toggling around the filters in the UI by using `handleSelectFilter`:
+
+```jsx
+<select
+	name='status'
+	onChange={e =>
+		handleSelectFilter(e.target.name, e.target.value)
+	}
+	defaultValue={getDefaultParamValue('status', '')}
+>
+	<option value=''>All</option>
+	<option value='Alive'>Alive</option>
+	<option value='Dead'>Dead</option>
+	<option value='unknown'>unknown</option>
+</select>
+```
+
 Then you can simply call API every time the `apiQuery` changes which means URL query parameters change.
 
 ```jsx
@@ -98,3 +122,8 @@ const fetchApi = async () => {
 ```
 
 Now you can try to change the URL query parameters in the browser or tinker around the filter UI and see the result.
+
+
+## License
+
+MIT License
