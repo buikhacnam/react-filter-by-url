@@ -1,33 +1,39 @@
 ![npm](https://img.shields.io/npm/v/react-filter-by-url)
 ![npm lisence](https://img.shields.io/npm/l/react-filter-by-url)
 ![npm type definitions](https://img.shields.io/npm/types/react-moralis)
-![YouTube Channel Views](https://img.shields.io/youtube/channel/views/UCvdDJyJ8twY5EwVSOA8MwMg?style=social)
+
 
 # react-filter-by-url
 
 
 <img src="https://raw.githubusercontent.com/buikhacnam/buikhacnam/main/public/demo.gif" alt="" />
 
+### Try it now:
+
+[![Edit bold-ellis-6rg1t](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/q4szr7?file=/src/DemoList.tsx)
+
 Live demo: https://react-filter-by-ulr-demo.vercel.app/list
 
-You want to filter a list of items by a URL parameter in a Single Page Application (React):
+
+## Problem
+
+This is the URL with query parameters in your browser address bar:
 
 ```
 https://example.com/search?page=2&type=public&status=open
 ```
 
-By also call the API with the same parameters:
+And you want to call an API with the exact same query parameters:
 
 ```
 https://example.com/api/search?page=2&type=public&status=open
 ```
 
-The list of items will be filterd automatically by:
+### API url with query parameters is updated automatically by:
 
-- Paste in the link with the URL query parameters
-- Change the URL query parameters in the browser
-- Select Filter Options in the UI
-
+- Paste in the link of the URL with query parameters to the address bar in browser
+- Change the URL query parameters directly in the browser
+- Update Filter Options in the UI
 
 ## useFilter
 
@@ -60,11 +66,10 @@ root.render(
 
 ```
 
-The hook only requires to pass in a list of `params` that will be used to display in the browser url and call the API; and the `apiUrl`.
+### Implementation
 
 ```jsx
 import { useUrlFilter } from 'react-filter-by-url'
-
 ```
 
 ```jsx
@@ -82,16 +87,33 @@ const DemoList: React.FC<ListProps> = ({}) => {
 		apiUrl
 	)
 
-	return <></>
+	return <>
+		...
+	</>
 }
 ```
 
--   `apiQuery`: API url with the query string
--   `getDefaultParamValue`: get the default value of a param
--   `handleSelectFilter`: handle the select filter event in the UI
+You will need to pass in this hook:
+
+| Option          | Description                                                     |
+| --------------- | --------------------------------------------------------------- |
+| `params`       | An array of string, define all the query parameters the API has                            | 
+| `apiUrl` | A string, the base url of the API without the query parameters.           |
 
 
-Try toggling around the filters in the UI by using `handleSelectFilter`:
+You will have access to the following values:
+
+
+| Option          | Description                                                     |
+| --------------- | --------------------------------------------------------------- |
+| `apiQuery`       | A string, API url with the query parameters (same query parameters with browser)                            | 
+| `getDefaultParamValue` | A function, get the default value of a query param           |
+| `handleSelectFilter`| A function, handle the change in the filter options in the UI    	|
+
+
+
+
+Try toggling around the filters in the UI by using `handleSelectFilter` to update the URL query parameters.:
 
 ```jsx
 <select
@@ -122,6 +144,8 @@ const fetchApi = async () => {
 ```
 
 Now you can try to change the URL query parameters in the browser or tinker around the filter UI and see the result.
+
+Live demo: https://react-filter-by-ulr-demo.vercel.app/list
 
 
 ## License

@@ -4,8 +4,8 @@
         "type": "git",
         "url": "https://github.com/buikhacnam/react-filter-by-url.git"
     },
-    "version": "0.0.7",
-    "description": "",
+    "version": "0.1.0",
+    "description": "A React library to update API Url with query parameters by looking at query parameters in the address bar of browser.",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "files": [
@@ -30,8 +30,36 @@
         "typescript": "^4.5.2"
     },
     "peerDependencies": {
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-router-dom": "^6.2.1"
-    }
+        "react": "^17.0 || ^16.0 || ^18.0",
+        "react-dom": "^17.0 || ^16.0 || 18.0",
+        "react-router-dom": "^6.2 || ^6.0 || ^6.2 || ^6.1 || ^6.3"
+    },
+    "keywords": [
+        "react",
+        "url",
+        "query",
+        "query parameter",
+        "query parameters",
+        "filter",
+        "filter by url",
+        "url search",
+        "state",
+        "filter by url",
+        "filter by url query",
+        "filter by url query parameters",
+        "filter by url query parameters state",
+        "filter by url query parameters state react",
+   
+        "query by url",
+        "query by url query",
+        "query by url query parameters",
+        "query by url query parameters state",
+        "query by url query parameters state react",
+
+        "search by url",
+        "search by url query",
+        "search by url query parameters",
+        "search by url query parameters state", 
+        "search by url query parameters state react"
+    ]
 }
