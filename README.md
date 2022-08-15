@@ -6,7 +6,7 @@
 # react-filter-by-url
 
 
-<img src="https://raw.githubusercontent.com/buikhacnam/buikhacnam/main/public/demo.gif" alt="" />
+<img src="https://raw.githubusercontent.com/buikhacnam/buikhacnam/main/public/ezgif.com-gif-maker.gif" alt="" />
 
 ### Try it now:
 
@@ -93,23 +93,23 @@ const DemoList: React.FC<ListProps> = ({}) => {
 }
 ```
 
-You will need to pass in this hook:
+#### You will need to pass in this hook:
 
 | Option          | Description                                                     |
 | --------------- | --------------------------------------------------------------- |
-| `params`       | An array of string, define all the query parameters the API has                            | 
+| `params`       | An array of string, define all the query parameters the API has.                           | 
 | `apiUrl` | A string, the base url of the API without the query parameters.           |
 
 
-You will have access to the following values:
+#### You will have access to the following values:
 
 
 | Option          | Description                                                     |
 | --------------- | --------------------------------------------------------------- |
-| `apiQuery`       | A string, API url with the query parameters (same query parameters with browser)                            | 
-| `getDefaultParamValue` | A function, get the default value of a query param           |
-| `handleSelectFilter`| A function, handle the change in the filter options in the UI    	|
-
+| `apiQuery`       | A string, API url with the query parameters (same query parameters with browser).                            | 
+| `getDefaultParamValue` | A function, get the default value of a query param.           |
+| `handleSelectFilter`| A function, handle the change in the filter options in the UI.    	|
+| `queryString`| A string, the recent query parameters.    	|
 
 
 
