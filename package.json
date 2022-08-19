@@ -4,7 +4,7 @@
         "type": "git",
         "url": "https://github.com/buikhacnam/react-filter-by-url.git"
     },
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "A React library to update API Url with query parameters by looking at query parameters in the address bar of browser.",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
