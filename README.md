@@ -10,7 +10,7 @@
 
 ### Try it now:
 
-[![Edit bold-ellis-6rg1t](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/q4szr7?file=/src/DemoList.tsx)
+[![Edit bold-ellis-6rg1t](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/elegant-keller-dpjp3e?file=/src/App.tsx)
 
 Live demo: https://react-filter-by-ulr-demo.vercel.app/list
 
@@ -40,30 +40,7 @@ https://example.com/api/search?page=2&type=public&status=open
 ### Installation
 
 ```
-yarn add react-filter-by-url react-router-dom
-```
-
-We use `react-router-dom` under the hood, so in the root file `index.tsx`, wrap the `<app />` with `<BrowserRouter>`:
-
-```jsx
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import reportWebVitals from './reportWebVitals'
-import { BrowserRouter as Router } from 'react-router-dom'
-
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-)
-
-root.render(
-  <React.StrictMode>
-    <Router>
-        <App />
-    </Router>
-  </React.StrictMode>
-)
-
+yarn add react-filter-by-url
 ```
 
 ### Implementation
@@ -113,7 +90,7 @@ const DemoList: React.FC<ListProps> = ({}) => {
 
 
 
-Try toggling around the filters in the UI by using `handleSelectFilter` to update the URL query parameters.:
+Try toggling around the filters in the UI by using `handleSelectFilter` to update the URL query parameters:
 
 ```jsx
 <select
