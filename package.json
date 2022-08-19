@@ -4,16 +4,12 @@
         "type": "git",
         "url": "https://github.com/buikhacnam/react-filter-by-url.git"
     },
-    "version": "0.2.3",
+    "version": "0.2.5",
     "description": "A React library to update API Url with query parameters by looking at query parameters in the address bar of browser.",
-    "main": "dist/cjs/index.js",
-    "module": "dist/esm/index.js",
-    "files": [
-        "dist"
-    ],
+    "main": "dist/index.js",
     "scripts": {
-        "build": "rm -rf dist/ && prettier --write src/ && npm run build:esm && npm run build:cjs",
-        "build:esm": "tsc",
+        "build": "rm -rf dist/ && prettier --write src/ && npm run build:esm",
+        "build:esm": "tsc -p .",
         "build:cjs": "tsc --module CommonJS --outDir dist/cjs"
     },
     "author": "Casey Bui",

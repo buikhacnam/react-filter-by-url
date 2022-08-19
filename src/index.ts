@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 /**
  *
@@ -9,54 +9,55 @@ import { useEffect, useState } from 'react'
  */
 
 export function useUrlFilter(params: string[], apiUrl: string) {
-	const url = new URL(window.location.href)
-	const query = url.searchParams
-	const [apiQuery, setApiQuery] = useState<string>(apiUrl)
-	const [queryString, setQueryString] = useState<string>('')
+    const url = new URL(window.location.href);
+    const query = url.searchParams;
+    const [apiQuery, setApiQuery] = useState<string>(apiUrl);
+    const [queryString, setQueryString] = useState<string>('');
 
-	useEffect(() => {
-		const recentQuery = '?' + query.toString()
-		setQueryString(recentQuery)
-		setApiQuery(apiUrl + recentQuery)
-	}, [])
+    useEffect(() => {
+        const recentQuery = '?' + query.toString();
+        setQueryString(recentQuery);
+        setApiQuery(apiUrl + recentQuery);
 
-	const handleSelectFilter = (name: string, value: string): void => {
-		const filter = convertParamsToFilterObject(params)
-		filter[name] = value
-		const query = buildQuery(params, filter)
-		setApiQuery(apiUrl + query)
-		setQueryString(query)
-		window.history.pushState({}, '', query)
-	}
+        window.addEventListener('popstate', function (e) {
+            window.location.reload();
+        });
+    }, []);
 
-	const buildQuery = (params: string[], filter: any): string => {
-		let url = '?'
-		params.forEach(param => {
-			url += `&${param}=${filter[param]}`
-		})
+    const handleSelectFilter = (name: string, value: string): void => {
+        const filter = convertParamsToFilterObject(params);
+        filter[name] = value;
+        const query = buildQuery(params, filter);
+        setApiQuery(apiUrl + query);
+        setQueryString(query);
+        window.history.pushState({}, '', query);
+    };
 
-		return url.replace('&', '')
-	}
+    const buildQuery = (params: string[], filter: any): string => {
+        let url = '?';
+        params.forEach((param) => {
+            url += `&${param}=${filter[param]}`;
+        });
 
-	const convertParamsToFilterObject = (params: string[]): any => {
-		const filter: any = {}
-		params.forEach((param: string) => {
-			filter[param] = query.get(param) || ''
-		})
-		return filter
-	}
+        return url.replace('&', '');
+    };
 
-	const getDefaultParamValue = (
-		params: string,
-		defaultValue: string
-	): string => {
-		return query.get(params) || defaultValue
-	}
+    const convertParamsToFilterObject = (params: string[]): any => {
+        const filter: any = {};
+        params.forEach((param: string) => {
+            filter[param] = query.get(param) || '';
+        });
+        return filter;
+    };
 
-	return {
-		apiQuery,
-		queryString,
-		getDefaultParamValue,
-		handleSelectFilter,
-	}
+    const getDefaultParamValue = (params: string, defaultValue: string): string => {
+        return query.get(params) || defaultValue;
+    };
+
+    return {
+        apiQuery,
+        queryString,
+        getDefaultParamValue,
+        handleSelectFilter
+    };
 }

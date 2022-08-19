@@ -10,10 +10,10 @@
         "moduleResolution": "node",
         "noImplicitAny": true,
         "noUnusedLocals": true,
-        "outDir": "dist/esm",
+        "outDir": "dist",
         "sourceMap": true,
         "strict": true,
-        "target": "es6"
+        "target": "es6",
     },
-    "include": ["src/**/*.ts", "src/**/*.tsx"]
+    "include": ["src"]
 }
