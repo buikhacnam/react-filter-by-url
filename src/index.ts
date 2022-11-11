@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
  * @License MIT
  */
 
-export function useUrlFilter(params: string[], apiUrl: string) {
+export function useUrlFilter(params: string[], apiUrl: string, refreshParams?: string[]) {
     const url = new URL(window.location.href);
     const query = url.searchParams;
     const [apiQuery, setApiQuery] = useState<string>(apiUrl);
@@ -27,6 +27,11 @@ export function useUrlFilter(params: string[], apiUrl: string) {
     const handleSelectFilter = (name: string, value: string): void => {
         const filter = convertParamsToFilterObject(params);
         filter[name] = value;
+        if (refreshParams && refreshParams?.length > 0 && !refreshParams.includes(name)) {
+            refreshParams.forEach((param) => {
+                filter[param] = '';
+            });
+        }
         const query = buildQuery(params, filter);
         setApiQuery(apiUrl + query);
         setQueryString(query);

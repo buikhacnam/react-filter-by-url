@@ -76,6 +76,7 @@ const DemoList: React.FC<ListProps> = ({}) => {
 | --------------- | --------------------------------------------------------------- |
 | `params`       | An array of string, define all the query parameters the API has.                           | 
 | `apiUrl` | A string, the base url of the API without the query parameters.           |
+| `refreshParams` | (Optional) an Array of string, represents query params need to refresh to the defaul ones. Ex: refresh page=1 when there is a change in other query params           |
 
 
 #### You will have access to the following values:
